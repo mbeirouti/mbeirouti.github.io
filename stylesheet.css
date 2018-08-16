@@ -29,6 +29,7 @@
 	flex-direction: column;
 	justify-self: center;
 	align-self: center;
+	
 }
 #links {
 	flex-wrap: wrap;
@@ -46,8 +47,9 @@
 	font-family: 'Raleway', sans-serif;
 	
 }
-.linkSeparator {
-	flex-basis: 10px;
+
+.iconContainer {
+	padding: 5px;
 }
 a {
 	color: rgb(0, 15, 48);
@@ -62,6 +64,9 @@ html, body{
 	height: 100%;
 	width: 100%;
 }
+
+.grow { transition: all .1s; }
+.grow:hover { transform: scale(1.08); }
 
 .separator {
 	background: rgba(128, 128, 128, 0.3);
