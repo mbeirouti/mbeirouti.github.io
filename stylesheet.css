@@ -1,0 +1,70 @@
+@font-face {
+	font-family: 'Yanone'; 
+    src: url('./YanoneKaffeesatz-Bold.ttf'); 
+}
+@font-face {
+	font-family: 'Raleway'; 
+	src: url("./Raleway-Regular.ttf")
+}
+#focus{
+	font-size: 100px;
+	font-family: 'Yanone', sans-serif;
+	color: rgb(0, 15, 48);
+	text-transform: uppercase;
+}
+.circularCrop{
+	display: block;
+	height: auto;
+	border-radius: 50%;
+	object-fit: cover;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+}
+#middleContainer {
+	text-align: center;
+	/* margin: 50px 10px 10px 50px; */
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-self: center;
+	align-self: center;
+}
+#links {
+	flex-wrap: wrap;
+	display: flex;
+	flex-direction: row;
+	/* width: 10%; */
+	justify-content: center;
+}
+#below{
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 35px 0px;
+	font-family: 'Raleway', sans-serif;
+	
+}
+.linkSeparator {
+	flex-basis: 10px;
+}
+a {
+	color: rgb(0, 15, 48);
+}
+html, body{
+	/* background: linear-gradient(-30deg, #4A5E63, #576B70); */
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	background: linear-gradient(-30deg, rgb(224, 249, 255), #FFFFFF);
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.separator {
+	background: rgba(128, 128, 128, 0.3);
+	margin: 0px 10px;
+	padding: 0px 1px;
+}

@@ -1,0 +1,586 @@
+/* For future possible layouts: https://css-tricks.com/snippets/css/complete-guide-grid/ */
+/* color palette: http://www.color-hex.com/color-palette/25582 */
+@import "compass/css3";
+
+:root{
+	--backgroundColor: #33393C;
+    --navBarColor: #9CADB7;
+    --navBarDark: #8A9BA5;
+    --fontColor:#F2F2F2;
+    
+
+/*    --colorOne: #B8D3DB;
+    --colorTwo: #C9DDE2;
+    --colorThree: #B6D6D4;
+    --colorFour: #BCE2E1;
+    --colorFive: #ABD6CE;*/
+
+    --colorOne: #39545C;
+    --colorTwo: #4A5E63;
+    --colorThree: #375755;
+    --colorFour: #3D6362;
+    --colorFive: #2C574F;
+
+
+
+}
+/*    --colorTwo: #F2F2F2;
+    --colorThree: #ABD332;
+    --colorFour: #CFD4D0;
+    --colorFive: #687A76;
+}*/
+
+html {
+	/* Resets Border Box to allow for more intuitive grids */
+	/* https://css-tricks.com/box-sizing/ */
+	box-sizing: border-box;	
+	height: 100%;
+	width: 100%;
+	background: var(--backgroundColor);
+}
+a {
+   outline: 0;
+}
+/* Allows Inheritence of border box property from class */
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+/* ____________________ GENERAL CLASSES ____________________ */
+
+
+.circularCrop{
+	display: block;
+	height: auto;
+	border-radius: 50%;
+	object-fit: cover;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+}
+
+.contentCenter{
+/*	position: absolute;
+	left: 27.5%;*/
+	min-width: 25% ;
+	max-width: 45%;
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	text-align: justify;
+
+}
+
+img, embed, object, video {
+    max-width: 100%;
+    image-orientation: from-image;
+}
+
+.portraitCircleCrop{
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 15vh;
+	height: 15vh;
+	border-radius: 50%;
+	overflow: hidden;
+	background: center center no-repeat;
+	background-size: cover;
+
+}
+
+.landscapeCircleCrop{
+
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 15vh;
+	height: 15vh;
+	border-radius: 50%;
+	overflow: hidden;
+	background: center center no-repeat;
+	background-size: cover;
+
+}
+
+
+
+
+
+
+/* Background Stuff */
+/* https://css-tricks.com/perfect-full-page-background-image/ */
+#background {
+	background: var(--backgroundColor);
+}
+
+
+body{
+	height: 100%;
+	width: 100%;
+	/*position: fixed;*/
+	top: 13%;
+	left: 0%;
+	margin: 0%;
+	padding: 0%;
+	
+}
+
+
+
+
+/* ____________________ DISCLAIMER ____________________ */
+
+.disclaimer{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 0;
+		flex: none;
+}
+
+h4{
+	font-style: italic;
+	font-weight: normal;
+	color: #CFF09E;
+	text-align: center;
+}
+
+.disclaimer.contentCenter{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 0;
+}
+/* ____________________ NAVIGATION BAR ____________________ */
+
+.navigationBar{
+
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	background: var(--navBarColor);
+	height: 13%;
+	width:100%;
+
+	z-index: 10000;
+
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+/*	flex-grow:1;
+	flex-shrink:0;
+	flex-basis:0;*/
+
+}
+
+
+.centeringContainer{
+
+	
+	height: 100%;
+	width: 70%;
+	position: absolute;
+	top: 0%;
+	left: 15%;
+
+	display: flex;
+	align-items: stretch;
+
+}
+
+
+.myName {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2.5vW;
+	color: var(--fontColor);
+
+	align-self: center;
+
+}
+.centeringContainerTwo{
+
+	display: flex;
+	align-items: stretch;
+
+	flex-grow:2;
+	flex-shrink:0;
+	flex-basis:0;
+/*
+	border-style: solid;
+	border-width: 0px 2px;
+	border-color: black;*/
+}
+
+.spacer{
+	flex-grow:5;
+	flex-shrink:0;
+	flex-basis:0;
+
+}
+
+.navigation{
+	display: flex;
+	justify-content: center;
+	flex-grow:4;
+	flex-shrink:0;
+	flex-basis:0;
+}
+
+.navigation ul{
+	display: flex;
+	flex: 1 0 0;
+	list-style-type: none;
+	margin: 0%;
+	padding: 0%;
+
+	
+	
+}
+
+.navigation li{
+
+	display: flex;
+	align-items: stretch;
+	justify-content: space-around;
+
+	flex-grow:1;
+	flex-basis:0;
+	
+
+	font-family: 'Open Sans', sans-serif;
+	text-align: center;
+	font-size: 1vw;
+
+}
+
+.navigation a{
+
+	display: flex;
+	flex: 1 0 0;
+	align-items: center;
+	justify-content: center;
+	color: var(--fontColor);
+	background: var(--navBarColor);
+	text-decoration: none;
+}
+
+.navigation a:hover {
+  	background: var(--navBarDark);
+
+}
+
+/* ____________________ MAIN STUFF ____________________ */
+
+
+.mainContainer { /*Potentially Unnecessary*/
+	position: absolute;
+	top:13%;
+	left:0%;
+	height:100%;
+	width:100%;	
+/*	display: flex;
+	flex-direction: column;*/
+
+	z-index: 55;
+	display: flex;
+	flex-flow: column;
+
+
+	font-family: 'Fira Sans';
+
+	color: var(--fontColor);
+
+
+
+}
+.imageContainer{
+
+/*	margin-top: 10px;*/
+	padding:30px;
+/*	flex-grow:1;
+	flex-shrink:0;
+	flex-basis:0*/
+;}
+
+.contentContainer{
+	
+	display: flex;
+
+	flex-grow:2;
+	flex-shrink:0;
+	flex-basis:0;
+}
+
+.spacer {
+	flex-grow:1;
+	flex-shrink:0;
+	flex-basis:0;
+}
+
+
+
+
+
+/* ____________________ ABOUT ____________________ */
+.About{
+	flex: none;
+
+	background-color: var(--colorOne);
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+
+
+	overflow: hidden;
+		flex: none;
+
+	font-weight: 300;
+
+}
+.aboutWrapper{
+	display: flex;
+  margin: 1rem;
+  padding-right: 25px;
+  	display: flex;
+	flex-flow: row;
+	align-items: center;
+	text-align: justify;
+}
+
+/* ____________________ RESUME ____________________ */
+
+
+#resume.contentCenter{
+	flex-flow: column;
+}
+.Resume{
+	flex: none;
+	background: linear-gradient(-30deg, var(--colorTwo), #576B70);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+
+	overflow: hidden;
+}
+
+.item{
+
+	background-color: #576B70;
+	display: flex;
+	flex-flow: row;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 50px;
+  margin: 1rem;
+  position: relative;
+  
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+
+.item:hover{
+
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+
+}
+
+.item li{
+	padding: 0px;
+}
+
+.item ul{
+	padding: 0px;
+}
+
+
+.itemTitle{
+	font-size: 2rem;
+	font-family: 'Philosopher';
+}
+.itemDetails{
+	padding: 10px;
+	font-size: 1rem;
+	font-style: italic;
+}
+.bulletPoints{
+/*
+	width: 100%;*/
+	flex-grow:6;
+	flex-shrink:0;
+	flex-basis:0;
+	padding-left: 10px;
+}
+
+.miniPictureHolder{
+
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.itemText{
+	font-weight: 300;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 3rem;
+}
+
+.itemHeader{
+
+	text-align: center;
+	align-self: center;
+}
+
+.itemHeader h2{
+	margin-top: 0px;
+	/*margin-left: 10px;
+	padding-left: 8px;	*/		;
+}
+
+/* --------->> RESUME IMAGES _______________________ */
+
+#image1{
+	background-image: url('./images/kelownaTrip/mrl2-c.jpg');
+}
+
+#image2{
+	background-image: url('./images/kelownaTrip/mrl3-c.jpg');
+}
+
+#image3{
+	background-image: url('./images/kelownaTrip/mrl1-c.jpg');
+}
+
+
+
+
+
+/* ____________________ PROJECTS ____________________ */
+
+.Projects{
+
+		flex: none;
+
+	background-color: var(--colorThree);
+	background: linear-gradient(-30deg, var(--colorThree), #446462);
+
+	display: flex;
+	flex-flow: row;
+	justify-content: space-around;
+	justify-content: center;
+	align-items: center;
+
+	overflow: hidden;
+}
+
+/*____________________ BLOG ____________________ */
+.Blog{
+		flex: none;
+
+	background: linear-gradient(-30deg, var(--colorFour), #4A706F);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	overflow: hidden;
+}
+
+
+
+
+/*____________________ MORE ____________________ */
+
+.More{
+
+	flex: none;
+	justify-content:center;
+	align-items: center;
+	background-color: var(--backgroundColor);
+	display: flex;
+
+}
+
+
+.iconContainer{
+
+
+	padding: 30px;
+}
+
+.emailHolder{
+
+	display: flex;
+	
+	justify-content: center;
+	align-items: center;
+
+	/*position: fixed;*/
+	width: 20%;
+	height: 15%;
+	border-radius: 2px;
+	background: linear-gradient(-30deg, #EEEEEE, #F9F9F9);
+	/*background-color: #F9F9F9;*/
+
+
+}
+
+.emailHolder>a{
+
+	flex-grow: 1;
+	flex-shrink: 0;
+	flex-basis: 0;
+	text-align: center;
+	color: var(--backgroundColor);
+	/*font-style: normal;*/
+	text-decoration: none;
+
+	font-family: 'Fira Sans';
+
+}
+
+
+.testClass{
+
+	object-fit: cover;
+	border-radius: 50%;
+	overflow: hidden;
+	max-width: 100%;
+	width: 20%;
+	height: 20%;
+
+	z-index: 100000000;
+}
+
+
+#overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0);
+	z-index: 1000000000;
+	visibility: hidden;
+	transition: background-color 0.5s;
+
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+
+}

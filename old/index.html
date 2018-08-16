@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">	
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- For responsive design -->
+
+
+<html lang="en">
+
+
+
+	<head>
+
+ 		<!-- To avoid possible breaking changes, using 1.12 instead of 3.1 -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-99096306-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+
+
+		<script type="text/javascript" src="./scrollTo/jquery.scrollTo.js"></script>
+
+		<!-- Stylesheet -->
+		<link rel="stylesheet" href="stylesheet.css">
+
+
+		<title>Matthew Beirouti</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Fira+Sans:300,400|Amiko|Jaldi|Kreon|Open+Sans|Philosopher|Roboto|Yanone+Kaffeesatz" rel="stylesheet"> 
+
+		<script src='https://www.google.com/recaptcha/api.js'></script>
+
+		<script>
+			$(window).load( function readyFunction(){
+				
+				$disclaimerHeight = $('div.disclaimer').height();
+				$aboutHeight = $('div.About').height();
+				$resumeHeight = $('div.Resume').height();
+				$projectsHeight = $('div.Projects').height();
+				$blogHeight = $('div.Blog').height();
+				
+			});
+			$(window).resize( function resizeFunction(){
+				
+				$disclaimerHeight = $('div.disclaimer').height();
+				$aboutHeight = $('div.About').height();
+				$resumeHeight = $('div.Resume').height();
+				$projectsHeight = $('div.Projects').height();
+				$blogHeight = $('div.Blog').height();
+				
+			});
+			function openPopup() {
+				document.getElementById("overlay").style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+				document.getElementById("overlay").style.visibility = "visible";
+			}
+			function closePopup() {
+				document.getElementById("overlay").style.backgroundColor = "rgba(0, 0, 0, 0)";
+				setTimeout(function(){document.getElementById("overlay").style.visibility = "hidden"}, 500);
+			}
+
+
+
+
+		</script>
+		
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+
+	</head>
+
+
+
+
+	<body>
+
+		<div class="navigationBar">
+			<div class="centeringContainer">
+
+				<div class="myName">
+					Matthew Beirouti
+				</div>
+				<div class="centeringContainerTwo">
+<!-- 					<div class="spacer">
+
+					</div> -->
+					<div class="spacer">
+
+					</div>
+
+
+
+					<nav class ="navigation">
+						<ul>
+							<li class="About"><a href="javascript:void(0)" onclick="$(window).scrollTo($disclaimerHeight)">About</a></li>
+							<li class="Resume"><a href="javascript:void(0)" onclick="$(window).scrollTo($disclaimerHeight+$aboutHeight)">Resume</a></li>
+							<li class="Projects"><a href="javascript:void(0)" onclick="$(window).scrollTo($disclaimerHeight+$aboutHeight+$resumeHeight)">Projects</a></li>
+							<li class="Blog"><a href="javascript:void(0)" onclick="$(window).scrollTo($disclaimerHeight+$aboutHeight+$resumeHeight+$projectsHeight)">Blog</a></li>
+						</ul>
+					</nav>
+<!-- 					<div class="spacer">
+
+					</div> -->
+<!-- 					<div class="spacer">
+
+					</div> -->
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+		<div class = "mainContainer" id="main">
+
+			<div class="disclaimer">
+				<div class="contentCenter">
+					<div><h4>Note: This website is still under development. I wanted to challenge myself to build it without using frameworks for the basic structure of the website. At the moment, it is best viewed on laptops/dekstops in Firefox 51 although it will very soon work on smaller devices as well.</h4></div>
+				</div>
+			</div>
+
+
+			<div class="About" id="About">
+				<div class="contentCenter">
+
+				<div class="aboutWrapper">
+
+					<div class = "imageContainer">
+							 <img src="./images/profile.jpg" class="circularCrop" alt="Profile Picture"> 
+					</div>
+					<div class="contentContainer">
+						
+						I'm a Computer Engineer (almost) studying at McGill University. I love working with hardware and software to build cool stuff. I'm passionate about technologies that have the potential to benefit the world and make a lot of money too. Currently, I'm most interested in automated homes and the role AI can play with regards to them. 
+
+					</div>
+				</div>
+				
+				</div>
+
+			</div>
+
+
+
+
+
+			<div class="Resume" id="Experience">
+
+
+				<div class = "contentCenter" id = "resume">
+
+
+				<div class = "item">
+
+
+					<div class = "itemText">
+						<div class = "itemHeader">
+							<div class="itemTitle">Project Engineer</div>
+							<div class="itemDetails">3DMena - Amman, Jordan</div>
+						</div>					
+						<div class = "bulletPoints">
+							<ul>
+								<li>Implemented a spoken password protected, voice controlled switch to unlock the door to our lab using a Raspberry Pi and other peripherals</li>
+								<li>Worked with Jasper, a python based open source platform which simplifies the integration of existing STT and TTS APIs, allowing quick application development</li>
+								<li>Documented progress in a simple, easy to read format to enable replication and future development</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+
+
+
+				<div class = "item">
+
+
+					<div class = "itemText">
+						<div class = "itemHeader">
+							<div class="itemTitle">Undergraduate Research Assistant</div>
+							<div class="itemDetails">Mobile Robotics Lab (MRL)</div>
+						</div>					
+						<div class = "bulletPoints">
+							<ul>
+								<li>Tested, troubleshooted and fail proofed ocean drifters which collect and relay research data through ROS, to an autonomously controlled boat</li>
+								<li>Optimized Python code and bash scripts to decrease power consumption, increase ease of use and increase data collection efficiency</li>
+								<li>Deployed and troubleshooted the ocean drifters and the autonomous boat to collect integral research data for a PhD candidate over the course of a week-long field trial</li>
+								<li>Worked heavily with Linux based operating systems and their shells</li>
+								<li>Logged technical details of the updated system onto a wiki page shared lab-wide, to allow for easy future development</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+
+
+
+
+				<div class = "item">
+
+
+					<div class = "itemText">
+						<div class = "itemHeader">
+							<div class="itemTitle">Teaching Assistant</div>
+							<div class="itemDetails">(Design Principles and Methods & Computers in Engineering)</div>
+						</div>					
+						<div class = "bulletPoints">
+							<ul>
+								<li>Utilized C, Java and MATLAB skills to enhance students’ understanding of engineering principles such as programming, troubleshooting, debugging and calibrating robots and source code</li>
+								<li>Improved code review ability by evaluating code submissions as well as lab demonstrations and reports</li>
+								<li>Refined presentation skills by leading demos, tutorials and exam review sessions</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+<!--   -->
+				</div>
+			</div>
+
+
+
+
+
+
+			<div class="Projects" id="Projects">
+				<h1>Coming Soon</h1>
+			</div>
+
+
+
+
+
+			<div class="Blog" id="Blog">
+				<a href="./blog/" class="">
+					Blog
+				</a>
+			</div>
+
+
+
+
+
+
+
+
+			<div class="More">
+				<div class="contentCenter">					
+					<div class = "iconContainer">
+						<a href="https://www.linkedin.com/in/matthewbeirouti" class="circularCrop">
+							<img src="./images/icons/linkedinIcon.png" class="circularCrop" alt="linkedIn">
+						</a>
+					</div>
+
+
+
+
+					<div class = "iconContainer">
+						<a href="javascript:void(0)" class="circularCrop" onclick = "openPopup();">
+  								<img src="./images/icons/gmailIcon.png" class="circularCrop" alt="gmail" style="background: white;">
+						</a>
+					</div>
+					
+
+
+
+
+
+
+
+					<div class = "iconContainer" class="circularCrop">
+						<a href="https://open.spotify.com/user/mbeirouti" class="circularCrop">
+							<img src="./images/icons/spotifyIcon.png" class="circularCrop" alt="spotify">
+						</a>
+					</div>
+					<div class = "iconContainer" class="circularCrop">
+						<a href="https://twitter.com/matthewbeirouti" class="circularCrop">
+							<img src="./images/icons/twitterIcon.png" class="circularCrop" alt="twitter">
+						</a>
+					</div>
+					<div class = "iconContainer" class="circularCrop">
+						<a href="https://www.airbnb.ca/users/show/15675791" class="circularCrop">
+							<img src="./images/icons/airbnbIcon.png" class="circularCrop" alt="airbnb">
+						</a>
+					</div>
+
+
+				</div>
+			
+				<!-- <div class="g-recaptcha" data-sitekey="6Lf1mRIUAAAAAIcdT5vpDLaE6TUQ11e_p4M1rF5O"></div> -->
+			</div>
+
+		</div>
+
+
+		<div class = "overlay" id = "overlay" onclick = "closePopup();">
+
+			<!-- <div class="g-recaptcha" data-sitekey="6Lf1mRIUAAAAAIcdT5vpDLaE6TUQ11e_p4M1rF5O"></div> -->
+			<div class = "emailHolder">
+				<a href="http://www.google.com/recaptcha/mailhide/d?k=015VxPJgJw7WiNdiERKCjpqg==&amp;c=CLqwkvC_K44NInr8nctSs3_W7TMs22HWsYUxm7LAXJY=" onclick="window.open('http://www.google.com/recaptcha/mailhide/d?k\x3d015VxPJgJw7WiNdiERKCjpqg\x3d\x3d\x26c\x3dCLqwkvC_K44NInr8nctSs3_W7TMs22HWsYUxm7LAXJY\x3d', '', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=500,height=300'); return false;" title="¯\_(ツ)_/¯">Click here to access my email!</a>
+			</div>
+		</div>
+
+
+	</body>
+
+
+
+
+</html>
