@@ -6,7 +6,7 @@
 	font-family: 'Raleway'; 
 	src: url("./assets/fonts/Raleway-Regular.ttf")
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 591px) {
 	#middleContainer{
 		position: absolute;
 		top: 50px;
@@ -26,9 +26,9 @@
 	#twitter {
 		order: 3;
 	}
-
 }
-@media only screen and (min-width: 601px) and (max-width: 788px) {
+/* @media only screen and (min-width: 590px) */
+@media only screen and (min-width: 592px) and (max-width: 788px) {
 	#spotify {
 		order: 4;
 	}
