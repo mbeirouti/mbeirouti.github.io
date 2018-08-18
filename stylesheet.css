@@ -1,18 +1,51 @@
 @font-face {
 	font-family: 'Yanone'; 
-    src: url('./YanoneKaffeesatz-Bold.ttf'); 
+    src: url('./assets/fonts/YanoneKaffeesatz-Bold.ttf'); 
 }
 @font-face {
 	font-family: 'Raleway'; 
-	src: url("./Raleway-Regular.ttf")
+	src: url("./assets/fonts/Raleway-Regular.ttf")
 }
 @media only screen and (max-width: 600px) {
 	#middleContainer{
 		position: absolute;
 		top: 50px;
 	}
+	#spotify {
+		order: 4;
+	}
+	#linkedin {
+		order: 2;
+	}
+	#github {
+		order: 1;
+	}
+	#airbnb {
+		order: 5;
+	}
+	#twitter {
+		order: 3;
+	}
 
 }
+@media only screen and (min-width: 601px) and (max-width: 788px) {
+	#spotify {
+		order: 4;
+	}
+	#linkedin {
+		order: 1;
+	}
+	#github {
+		order: 2;
+	}
+	#airbnb {
+		order: 5;
+	}
+	#twitter {
+		order: 3;
+	}
+}
+
 #focus{
 	font-size: 100px;
 	font-family: 'Yanone', sans-serif;
@@ -56,6 +89,8 @@
 	justify-content: center;
 	margin: 35px 0px;
 	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 18px;
 	
 }
 
