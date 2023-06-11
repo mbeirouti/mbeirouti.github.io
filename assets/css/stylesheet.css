@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'Yanone'; 
-    src: url('./assets/fonts/YanoneKaffeesatz-Bold.ttf'); 
+    src: url('/assets/fonts/YanoneKaffeesatz-Bold.ttf'); 
 }
 @font-face {
 	font-family: 'Raleway'; 
-	src: url("./assets/fonts/Raleway-Regular.ttf")
+	src: url("/assets/fonts/Raleway-Regular.ttf")
 }
 @media only screen and (max-width: 591px) {
 	#middleContainer{
