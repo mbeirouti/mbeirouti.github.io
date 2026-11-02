@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marathon Pace Calculator</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="panel pace-panel">
+      <h2>Average pace per mile</h2>
+      <div class="pace-value" id="paceValue">8:00</div>
+      <div class="slider-row">
+        <button type="button" class="step" id="minusSecond" aria-label="Subtract one second"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10"/></svg></button>
+        <input type="range" id="paceSlider" min="300" max="720" step="1" value="480" aria-label="Pace per mile in seconds">
+        <button type="button" class="step" id="plusSecond" aria-label="Add one second"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3v10"/></svg></button>
+      </div>
+      <div class="slider-labels">
+        <span>5:00</span>
+        <span>12:00</span>
+      </div>
+      <p class="hint">Drag the slider or use the arrow keys / buttons to adjust by 1 second.</p>
+      <div class="km-pace">≈ <span id="kmPace">4:58</span> per km</div>
+
+      <div class="strategy">
+        <h2>Split strategy</h2>
+        <div class="strategy-buttons" id="strategyButtons"></div>
+        <p class="hint" id="strategyDesc"></p>
+      </div>
+    </section>
+
+    <section class="panel result-panel">
+      <h2>Marathon finish time</h2>
+      <div class="marathon-time" id="marathonTime">3:29:45</div>
+      <div class="halves" id="halves"></div>
+
+      <div class="chart-block">
+        <div class="chart-title">Pace by mile <span>(faster ↑ · dashed = average)</span></div>
+        <div class="chart" id="chart">
+          <svg id="chartSvg" role="img" aria-label="Pace per mile from start to finish"></svg>
+          <div class="tooltip" id="tooltip" hidden></div>
+        </div>
+      </div>
+
+      <details class="splits" id="splits">
+        <summary>Mile splits</summary>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Mile</th>
+                <th>Pace /mi</th>
+                <th>Split</th>
+                <th>Elapsed time</th>
+              </tr>
+            </thead>
+            <tbody id="splitsBody"></tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <div class="course-wrap">
+    <section class="panel course" id="course">
+      <div class="course-head">
+        <div>
+          <h2>2027 Eugene Marathon course</h2>
+          <p class="course-sub">Sun 25 Apr 2027 · 7:00 a.m. start · Hayward Field</p>
+        </div>
+        <p class="course-sub" id="courseStats"></p>
+      </div>
+
+      <div class="compare">
+        <span class="compare-label">Compare strategies <span>(your split strategy is always shown · add up to 3 more)</span></span>
+        <div class="strategy-buttons" id="compareChips"></div>
+      </div>
+
+      <div class="time-control">
+        <button type="button" class="play" id="playButton" aria-label="Play race" aria-pressed="false">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path class="icon-play" d="M5 3.5v9l7-4.5z"/><path class="icon-pause" d="M4.5 3.5h2.5v9H4.5zM9 3.5h2.5v9H9z"/></svg>
+        </button>
+        <div class="clock">
+          <div class="race-clock" id="raceClock">0:00:00</div>
+          <div class="time-of-day" id="timeOfDay">7:00:00 a.m.</div>
+        </div>
+        <input type="range" id="timeSlider" min="0" max="12600" step="10" value="0" aria-label="Race clock">
+      </div>
+
+      <div class="course-grid">
+        <div>
+          <div class="course-map course-svg" id="courseMap">
+            <svg id="mapSvg" role="img" aria-label="Course map with runner positions"></svg>
+            <div class="tooltip" id="mapTip" hidden></div>
+          </div>
+          <ul class="map-legend">
+            <li><span class="key key-route"></span>Course</li>
+            <li><span class="key key-river"></span>Willamette River</li>
+            <li><span class="key key-mile"></span>Mile marker</li>
+            <li><span class="key key-aid"></span>Aid station</li>
+            <li><span class="badge">1</span>Checkpoint</li>
+          </ul>
+        </div>
+
+        <div class="course-side">
+          <div class="table-wrap">
+            <table class="runner-table">
+              <thead>
+                <tr>
+                  <th>Strategy</th>
+                  <th>Mile</th>
+                  <th>Pace</th>
+                  <th>Elevation</th>
+                  <th>Gap</th>
+                </tr>
+              </thead>
+              <tbody id="runnerBody"></tbody>
+            </table>
+          </div>
+
+          <h3 class="sub-title">Checkpoints <span>(elapsed time when you reach each one)</span></h3>
+          <div class="table-wrap">
+            <table class="checkpoint-table">
+              <thead id="checkpointHead"></thead>
+              <tbody id="checkpointBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sub-title">Elevation <span>(hover to find a spot on the map)</span></h3>
+      <div class="elev-chart course-svg" id="elevChart">
+        <svg id="elevSvg" role="img" aria-label="Course elevation profile with runner positions"></svg>
+        <div class="tooltip" id="elevTip" hidden></div>
+      </div>
+
+      <p class="sources">
+        Route, mile markers and aid stations come from the race's official interactive course map. Its layers are still
+        labelled 2026, so the 2027 course may not have changed. Elevation is from USGS 3DEP 10 m data. River and landmark
+        locations are © OpenStreetMap contributors. Pace strategies don't adjust for hills.
+      </p>
+    </section>
+  </div>
+
+  <script src="course-data.js"></script>
+  <script src="app.js"></script>
+  <script src="course.js"></script>
+</body>
+</html>

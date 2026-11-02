@@ -11,39 +11,16 @@
 		position: absolute;
 		top: 50px;
 	}
-	#spotify {
-		order: 4;
-	}
-	#linkedin {
-		order: 2;
-	}
-	#github {
-		order: 1;
-	}
-	#airbnb {
-		order: 5;
-	}
-	#twitter {
-		order: 3;
-	}
 }
-/* @media only screen and (min-width: 590px) */
-@media only screen and (min-width: 592px) and (max-width: 788px) {
-	#spotify {
-		order: 4;
-	}
-	#linkedin {
-		order: 1;
-	}
-	#github {
-		order: 2;
-	}
-	#airbnb {
-		order: 5;
-	}
-	#twitter {
-		order: 3;
-	}
+
+/* Link colours were previously supplied by Bootstrap; keep the same look */
+#below a {
+	color: #337ab7;
+	text-decoration: none;
+}
+#below a:hover {
+	color: #23527c;
+	text-decoration: underline;
 }
 
 #focus{
@@ -126,4 +103,14 @@ a {
 	background: rgba(128, 128, 128, 0.3);
 	margin: 0px 10px;
 	padding: 0px 1px;
+}
+
+/* Small screens: use more of the width and shrink the icons so all three fit on one row */
+@media only screen and (max-width: 591px) {
+	#middleContainer {
+		width: 90%;
+	}
+	.iconContainer {
+		width: 84px;
+	}
 }
